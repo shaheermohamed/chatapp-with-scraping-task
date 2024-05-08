@@ -13,7 +13,7 @@
 
 Task 1: React Component Development
     - i able to create login, signup, home, scrap pages in frontend
-    - not able to implement websocket technology so need to refresh page for latest message
+    - not able to implement websocket technology but tried to implement so need to refresh page for latest message
 
 Task 2: Node.js Backend Development
     - i able to create user authentication,messages,scrape endpoints 

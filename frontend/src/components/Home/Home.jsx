@@ -33,6 +33,15 @@ const Home = () => {
   const [chatMessages, setChatMessages] = useState([]);
   const [refresh, setRefresh] = useState(false);
   console.log("currentReceiverId:", currentReceiverId);
+  useEffect(() => {
+    socket.on("message", (message) => {
+      setChatMessages((prevMessages) => [...prevMessages, message]);
+    });
+
+    return () => {
+      socket.off("message");
+    };
+  }, []);
   const showModal = () => {
     setIsModalOpen(true);
   };

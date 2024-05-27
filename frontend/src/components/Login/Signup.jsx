@@ -32,7 +32,7 @@ const Signup = () => {
 
   //form submit function
   const handleClickRegister = (data) => {
-    axios.post("http://localhost:4000/auth/register", data, {
+    axios.post("https://chatapp-with-scraping-task-server.onrender.com/auth/register", data, {
       headers: {
         "Content-Type": "application/json",
       }

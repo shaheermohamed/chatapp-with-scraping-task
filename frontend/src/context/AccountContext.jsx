@@ -11,7 +11,7 @@ const UserContext = ({ children }) => {
   useEffect(() => {
     //getting logged user after login
     axios
-      .get("http://localhost:4000/auth/login", {
+      .get("https://chatapp-with-scraping-task-server.onrender.com/auth/login", {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

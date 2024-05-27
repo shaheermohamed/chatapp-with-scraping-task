@@ -22,7 +22,7 @@ const Scrape = () => {
   const handleScrape = () => {
     axios
       .post(
-        "http://localhost:4000/url/scrape",
+        "https://chatapp-with-scraping-task-server.onrender.com/url/scrape",
         {
           url: url,
         },
@@ -59,7 +59,7 @@ const Scrape = () => {
   //getting list of scrapped headlines
   const getScrape = () => {
     axios
-      .get(`http://localhost:4000/url/getheadlines`, {
+      .get(`https://chatapp-with-scraping-task-server.onrender.com/url/getheadlines`, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

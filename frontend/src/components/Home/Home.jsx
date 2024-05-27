@@ -69,7 +69,7 @@ const Home = () => {
     if (currentMessage !== (null || "") && currentReceiverId !== null) {
       axios
         .post(
-          "http://localhost:4000/chat/send-message",
+          "https://chatapp-with-scraping-task-server.onrender.com/chat/send-message",
           {
             message: currentMessage,
             receiverId: currentReceiverId,
@@ -109,7 +109,7 @@ const Home = () => {
   //fetching current user messages
   const handleCurrentUserMessage = () => {
     axios
-      .get(`http://localhost:4000/chat/messages/${currentReceiverId}`, {
+      .get(`https://chatapp-with-scraping-task-server.onrender.com/chat/messages/${currentReceiverId}`, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

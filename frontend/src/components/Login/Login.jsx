@@ -32,7 +32,7 @@ const Login = () => {
   //form submit function
   const handleClickLogin = (data) => {
     axios
-      .post("https://chatapp-with-scraping-task-server.onrender.com/auth/login", data, {
+      .post("http://localhost:4000/auth/login", data, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

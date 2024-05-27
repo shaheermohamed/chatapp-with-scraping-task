@@ -19,7 +19,7 @@ require("dotenv").config();
 const server = require("http").createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://chatapp-with-scraping-task-frontend.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   },
 });
@@ -27,7 +27,7 @@ const io = new Server(server, {
 app.use(helmet());
 app.use(
   cors({
-    origin: "https://chatapp-with-scraping-task-frontend.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -37,7 +37,7 @@ app.use(sessionM);
 app.options(
   "*",
   cors({
-    origin: "https://chatapp-with-scraping-task-frontend.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );

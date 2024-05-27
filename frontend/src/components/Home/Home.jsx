@@ -33,15 +33,6 @@ const Home = () => {
   const [chatMessages, setChatMessages] = useState([]);
   const [refresh, setRefresh] = useState(false);
   console.log("currentReceiverId:", currentReceiverId);
-  useEffect(() => {
-    socket.on("message", (message) => {
-      setChatMessages((prevMessages) => [...prevMessages, message]);
-    });
-
-    return () => {
-      socket.off("message");
-    };
-  }, []);
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -69,7 +60,7 @@ const Home = () => {
     if (currentMessage !== (null || "") && currentReceiverId !== null) {
       axios
         .post(
-          "https://chatapp-with-scraping-task-server.onrender.com/chat/send-message",
+          "http://localhost:4000/chat/send-message",
           {
             message: currentMessage,
             receiverId: currentReceiverId,
@@ -109,7 +100,7 @@ const Home = () => {
   //fetching current user messages
   const handleCurrentUserMessage = () => {
     axios
-      .get(`https://chatapp-with-scraping-task-server.onrender.com/chat/messages/${currentReceiverId}`, {
+      .get(`http://localhost:4000/chat/messages/${currentReceiverId}`, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

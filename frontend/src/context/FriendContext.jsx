@@ -8,7 +8,7 @@ const FriendProviderContext = ({ children }) => {
 //fetching user list
   const handleUserList = () => {
     axios
-      .get("https://chatapp-with-scraping-task-server.onrender.com/user/list", {
+      .get("http://localhost:4000/user/list", {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
